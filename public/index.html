@@ -362,7 +362,7 @@
       phrasesEl.innerHTML = '<div style="text-align: center; color: #666; font-style: italic;">Scanning entropy fields...</div>';
       
       try {
-        const res = await fetch("/generate");
+        const res = await fetch("/api/generate");
         const data = await res.json();
 
         
