@@ -1,8 +1,17 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/generate.js", "use": "@vercel/node" },
-    { "src": "public/index.html", "use": "@vercel/static" }
+    {
+      "src": "api/generate.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "wordlists/**"
+      }
+    },
+    {
+      "src": "public/index.html",
+      "use": "@vercel/static"
+    }
   ],
   "rewrites": [
     { "source": "/api/generate", "destination": "api/generate.js" },
