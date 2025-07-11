@@ -10,7 +10,8 @@ module.exports = (req, res) => {
   };
 
   function loadLines(filepath) {
-    const data = fs.readFileSync(path.resolve(__dirname, "..", filepath), "utf-8");
+    const fullPath = path.join(process.cwd(), filepath);
+    const data = fs.readFileSync(fullPath, "utf-8");
     return data.split("\n").map(line => line.trim()).filter(Boolean);
   }
 
